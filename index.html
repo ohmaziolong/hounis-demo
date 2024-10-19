@@ -234,12 +234,8 @@
                     postDiv.appendChild(commentElement);
                 });
 
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Xóa';
-                deleteButton.onclick = () => {
-                    deletePost(index);
+
                 };
-                postDiv.appendChild(deleteButton);
 
                 postsContainer.appendChild(postDiv);
             });
@@ -251,11 +247,6 @@
             localStorage.setItem('posts', JSON.stringify(posts));
         }
 
-        function deletePost(index) {
-            const posts = JSON.parse(localStorage.getItem('posts')) || [];
-            posts.splice(index, 1); // Xóa bài đăng tại chỉ số đã cho
-            localStorage.setItem('posts', JSON.stringify(posts));
-            renderPosts(); // Cập nhật danh sách bài đăng
         }
 
         window.onload = renderPosts;
