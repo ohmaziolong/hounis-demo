@@ -149,12 +149,6 @@ function createCommentElement(comment, postIndex, commentIndex) {
     commentElement.appendChild(deleteCommentButton);
     return commentElement;
 }
-
-function createDeleteButton(index) {
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Xóa';
-    deleteButton.onclick = () => deletePost(index);
-    return deleteButton;
 }
 
 function updatePost(index, post) {
