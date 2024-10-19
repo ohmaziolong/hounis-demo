@@ -97,10 +97,7 @@ function createPostElement(post, index) {
         postDiv.appendChild(commentElement);
     });
 
-    const deleteButton = createDeleteButton(index);
-    postDiv.appendChild(deleteButton);
-
-    return postDiv;
+    return postDiv; // Bỏ phần nút xóa
 }
 
 function createLikeButton(post, index) {
@@ -149,19 +146,11 @@ function createCommentElement(comment, postIndex, commentIndex) {
     commentElement.appendChild(deleteCommentButton);
     return commentElement;
 }
-}
 
 function updatePost(index, post) {
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
     posts[index] = post;
     localStorage.setItem('posts', JSON.stringify(posts));
-}
-
-function deletePost(index) {
-    const posts = JSON.parse(localStorage.getItem('posts')) || [];
-    posts.splice(index, 1);
-    localStorage.setItem('posts', JSON.stringify(posts));
-    renderPosts();
 }
 
 function previewImage() {
